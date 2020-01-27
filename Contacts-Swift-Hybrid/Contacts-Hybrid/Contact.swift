@@ -12,10 +12,12 @@
 import Foundation
 
 // Question: Why did we use a class?
-// struct fro
+// struct from Swift does't work in Objective-C
+// Must use a class in Swif if we wnat to use itfrom
 // (look at beginning of lecture, basically need a class in swift for ObjC to work
 
-@objc class Contact: NSObject {
+@objc
+class Contact: NSObject {
     @objc var name: String
     @objc var relationship: String?
     @objc init(name: String, relationship: String?) {
@@ -23,3 +25,7 @@ import Foundation
         self.relationship = relationship
     }
 }
+
+// 1. Use Swift Classes
+// 2. Subclass NSObject
+// 3. Mark your properties / methods with @objc (@objcmembers)
